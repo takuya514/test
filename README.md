@@ -8,16 +8,4 @@ The script uses only the Python standard library and requires Python 3.7+.
 
 ## Usage
 
-Run the tutor from the repository root.
 
-List available categories:
-
-```bash
-python3 ai_tutor.py --list
-```
-
-Start a session for a specific category (e.g. math):
-
-```bash
-python3 ai_tutor.py math
-```
