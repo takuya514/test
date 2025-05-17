@@ -1,6 +1,4 @@
-# Simple AI Tutor CLI Application
 
-import random
 
 # Dataset of questions by category
 QUESTIONS = {
@@ -49,40 +47,5 @@ QUESTIONS = {
 
 
 class Tutor:
-    def __init__(self, category: str):
-        if category not in QUESTIONS:
-            raise ValueError(f"Unknown category: {category}")
-        # shuffle questions for randomness
-        self.questions = list(QUESTIONS[category])
-        random.shuffle(self.questions)
-        self.correct = 0
-        self.total = len(self.questions)
 
-    def ask(self):
-        for q in list(self.questions):
-            print("\n" + q["question"])
-            user_answer = input("Your answer: ").strip().lower()
-            if user_answer == q["answer"].lower():
-                print("Correct!")
-                self.correct += 1
-            else:
-                print(f"Incorrect. The correct answer is: {q['answer']}")
-                print("Explanation:", q["explanation"])
-            
-        print(f"\nYour score: {self.correct}/{self.total}")
-
-
-def main():
-    print("Welcome to the AI Tutor!")
-    category = input(f"Choose a category {list(QUESTIONS.keys())}: ").strip().lower()
-    try:
-        tutor = Tutor(category)
-    except ValueError as e:
-        print(e)
-        return
-    tutor.ask()
-
-
-if __name__ == "__main__":
-    main()
 
